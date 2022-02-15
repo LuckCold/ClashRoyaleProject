@@ -3,21 +3,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-import com.sun.org.slf4j.internal.Logger;
-
 import kong.unirest.Unirest;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
-import logic.GenerateKeyLogic;
-import pages.CreateKeyPage;
 
 public class Clans {
 	String ListaClans;
@@ -25,6 +19,7 @@ public class Clans {
 	String clanName;
 	String locationId;
 	String clanInfo;
+	private Logger log;
 	
 	public Clans(String TOKEN, String clanName, String LocationId) {
 		this.TOKEN = TOKEN;
@@ -35,7 +30,13 @@ public class Clans {
 	
 	
 	public void getClanMembers() {
-		
+		log = new Logger();
+		try {
+			log.getRegistro("Pego os dados dos membros do Clan");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 		
 		String clansInfo = Unirest.get(ListaClans)
 				.header("Accept", "application/json")

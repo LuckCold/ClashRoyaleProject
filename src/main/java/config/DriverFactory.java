@@ -12,8 +12,6 @@ public class DriverFactory {
 
 	public DriverFactory(){
 		
-//		ChromeOptions options = new ChromeOptions();
-//		options.setHeadless(true);
 		driver = new ChromeDriver();
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver.manage().window().maximize();
