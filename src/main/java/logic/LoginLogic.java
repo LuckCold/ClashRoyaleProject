@@ -18,7 +18,7 @@ public class LoginLogic {
 	WebDriverWait wait;
 	
 	String email = "lucasmoreno389@gmail.com";
-	String senha = "fRlP5!-U7&fR=XI!h7st";
+	String senha = "";
 	
 	public LoginLogic() {
 		homePage = new HomePage();
