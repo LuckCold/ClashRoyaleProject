@@ -1,0 +1,6 @@
+14/02/2022 06:28:11 -0300
+Clico no botão de Login da página.
+Digito email e senha
+Clico botão pra logar
+Crio uma nova key
+Copio nova key
